@@ -1,0 +1,13 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "ejs": "^1.0.0",
+    "express": "3.*",
+    "method-override": "^2.3.0",
+    "mongoose": "*",
+    "nodemon": "^1.2.1"
+  }
+}
