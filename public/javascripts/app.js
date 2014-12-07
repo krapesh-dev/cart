@@ -8,8 +8,8 @@ app.controller('aboutController', function($scope) {
   $scope.message = 'About page';
 });
 
-app.controller('contactController', function($scope) {
-  $scope.message = 'Contact page';
+app.controller('loginController', function($scope) {
+  $scope.message = 'Login page';
 });
 
 app.controller('orderController', function($scope) {
@@ -26,11 +26,11 @@ app.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'partials/about.html',
 			controller: 'aboutController'
 		})
-        .when('/contact', {
-			templateUrl: 'partials/contact.html',
-			controller: 'contactController'
+    .when('/login', {
+			templateUrl: 'partials/login.html',
+			controller: 'loginController'
 		})
-        .when('/order', {
+    .when('/order', {
 			templateUrl: 'partials/order.html',
 			controller: 'orderController'
 		})

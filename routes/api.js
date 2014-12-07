@@ -14,9 +14,11 @@ var Schema = new mongoose.Schema({
 var user = mongoose.model('items', Schema);
 
 exports.order = function(req, res) {
+  console.log('order route');
+  
   user.find({}, function(err, doc) {
-    if(err) res.json(err);
-    else    console.log(doc);
+    if(err) console.log(err);
+    else    console.log("Items: " + doc);
   });
 };
 
@@ -30,3 +32,11 @@ exports.newItem = function(req, res) {
     else    res.send('Inserted!');
   });
 };
+
+// Close mongodb connection on 'Ctrl+C' on terminal
+process.on('SIGINT', function() {
+  mongoose.connection.close(function () {
+    console.log('Mongoose disconnected on app termination');
+    process.exit(0);
+  });
+});
